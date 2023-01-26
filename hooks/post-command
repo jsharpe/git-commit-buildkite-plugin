@@ -23,7 +23,7 @@ else
   git fetch "$remote" "$branch:$branch"
   git checkout "$branch"
 fi
-git add -A "${BUILDKITE_PLUGIN_GIT_COMMIT_ADD:-.}"
+git add -u "${BUILDKITE_PLUGIN_GIT_COMMIT_ADD:-.}"
 
 if ! git diff-index --quiet HEAD
 then
